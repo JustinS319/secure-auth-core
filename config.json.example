@@ -1,0 +1,5 @@
+{
+  "email_address": "your.email@gmail.com",
+  "email_password": "your-app-password-here",
+  "note": "This is a template. Copy to config.json and fill with real Gmail app password. Never commit real config.json"
+}

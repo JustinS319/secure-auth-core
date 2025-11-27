@@ -1,0 +1,13 @@
+# Sensitive / user-specific files
+userAccounts.json
+config.json
+
+# OS garbage
+.DS_Store
+Thumbs.db
+
+# IDEs
+.idea/
+.vscode/
+__pycache__/
+*.pyc
