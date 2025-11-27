@@ -1,5 +1,9 @@
 # Secure Authentication Core
 
+[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-red.svg)](https://opensource.org/licenses/Apache-2.0)
+[![No Dependencies](https://img.shields.io/badge/dependencies-none-green.svg)]()
+
 A small, single-file user authentication system written in pure Python with no external dependencies.
 
 Professor asked for a "mini-program". I went a bit beyond a simple calculator.
