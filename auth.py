@@ -28,9 +28,9 @@ from hashlib import pbkdf2_hmac
 from getpass import getpass
 from datetime import datetime
 CONFIG = {
-    "db_path": os.path.expanduser(os.path.join(os.path.dirname(__file__), "userAccounts.json")),
-    "audit_log": os.path.expanduser(os.path.join(os.path.dirname(__file__), "auth_audit.log")),
-    "email_config": os.path.expanduser(os.path.join(os.path.dirname(__file__), "config.json")),
+    "db_path": os.path.expanduser("~/.secure_auth_core/userAccounts.json"),
+    "audit_log": os.path.expanduser("~/.secure_auth_core/auth_audit.log"),
+    "email_config": os.path.expanduser("~/.secure_auth_core/config.json"),
     "max_failed": 5,
     "lockout_minutes": 15
 }
@@ -47,6 +47,9 @@ def load_email_config():
             return json.load(file)
     except FileNotFoundError:
         print("Config file not found!")
+        
+        time.sleep(1)
+
         return None
 # Setting a global variable for email config to avoid reloading multiple times
 email_cfg = load_email_config()
