@@ -51,8 +51,6 @@ def load_email_config():
         time.sleep(1)
 
         return None
-# Setting a global variable for email config to avoid reloading multiple times
-email_cfg = load_email_config()
 def load_accounts():
     filePath = CONFIG["db_path"]
     if not os.path.exists(filePath):
@@ -62,8 +60,12 @@ def load_accounts():
         return json.load(file)
 def save_accounts(data):
     filePath = CONFIG["db_path"]
-    with open(filePath, "w") as file:
+    tempFile = filePath + ".tmp"
+    with open(tempFile, "w") as file:
         json.dump(data, file, indent=4)
+        file.flush()
+        os.fsync(file.fileno())
+    os.replace(tempFile, filePath)
 def main():
     # Entry point of the program. Upon start-up it will automatically begin with this module.
     log("Program started")
